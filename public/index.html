@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calendar</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id= "app">
+<h1 class ="Hops">Calendar</h1>
+
+<div class="month">
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li class="Current Month">
+      March<br>
+      <span style="font-size:18px">2017</span
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>18 <br>Mon</li>
+  <li>19 <br>Tue</li>
+  <li>20<br>Wed</li>
+  <li>21<br>Th</li>
+  <li>22<br>Fri</li>
+  <li>23<br>Sat</li>
+  <li>24<br>Sun</li>
+</ul>
+<ul class="days">
+   <li>
+      <ul class = "Yep">
+    <p v-for = "item in Monday">
+  <label > {{item.time}} {{item.eventer}} <br></label>
+</p>
+   </ul>
+  </li>
+  <li><ul class = "Yep">
+<p v-for = "item in Tuesday">
+<label > {{item.time}} {{item.eventer}} <br></label>
+</p>
+</ul></li>
+  <li>
+    <ul class = "Yep">
+  <p v-for = "item in Wednesday">
+  <label > {{item.time}} {{item.eventer}} <br></label>
+  </p>
+  </ul></li>
+  <li><ul class = "Yep">
+<p v-for = "item in Thursday">
+<label > {{item.time}} {{item.eventer}} <br></label>
+</p>
+</ul>
+  </li>
+  <li><ul class = "Yep">
+<p v-for = "item in Friday">
+<label > {{item.time}} {{item.eventer}} <br></label>
+</p>
+</ul>
+</li>
+  <li><ul class = "Yep">
+<p v-for = "item in Saturday">
+<label > {{item.time}} {{item.eventer}} <br></label>
+</p>
+</ul>
+</li>
+  <li><ul class = "Yep">
+<p v-for = "item in Sunday">
+<label > {{item.time}} {{item.eventer}} <br></label>
+</p>
+</ul>
+</li>
+
+</ul>
+<h3>New Event</h3>
+<div class= "newEvent">
+  <form v-on:submit.prevent ="addEvent()">
+  <input type ="text" v-model="day" placeholder="day (m-Monday)">
+  <input type ="text" v-model ="time" placeholder ="time">
+  <input type ="text" v-model ="eventer" placeholder ="event name">
+  <button type ="submit" >AddEvent</button>
+  <p>m-Monday <br> t-Tuesday<br> w-Wednesday<br> th-Thursday <br>
+    f-Friday<br> s-Saturday <br>su-Sunday</p>
+</form>
+<button v-on:submit.prevent ="getItems()">Load</button>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
+integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"
+integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
+ <script src="/index.js"></script>
+</body>
+</html>
