@@ -15,6 +15,9 @@ var app = new Vue({
   ready(){
     this.getItems();
   },
+  created:function(){
+this.getItems();
+},
   computed:{
   },
   methods:{
@@ -30,25 +33,31 @@ var app = new Vue({
       }).catch(err => {
       });
       axios.get("/api/Wednesday").then(response => {
-        this.Thursday=response.data;
+        this.Wednesday=response.data;
         return true;
       }).catch(err => {
       });
       axios.get("/api/Thursday").then(response => {
-        this.Friday=response.data;
+        this.Thursday=response.data;
         return true;
       }).catch(err => {
       });
       axios.get("/api/Friday").then(response => {
-        this.Saturday=response.data;
+        this.Friday=response.data;
         return true;
       }).catch(err => {
       });
       axios.get("/api/Saturday").then(response => {
+        this.Saturday=response.data;
+        return true;
+      }).catch(err => {
+      });
+	 axios.get("/api/Sunday").then(response => {
         this.Sunday=response.data;
         return true;
       }).catch(err => {
       });
+
     },
     addEvent: function(){
     if(this.day==='m'){this.addMonday()}
